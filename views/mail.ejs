@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Mail</title>
+    <link rel="stylesheet" href="css/mail.css">
+</head>
+
+<body>
+
+    <header>
+    
+        <nav>
+            <ul class="nav__links">
+            <li id="heading">Ai Generated Mail</li>
+            <li><a href="/">Home </a></li>
+            <li><a href="/howtoreply">How to Reply</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
+        <a href="mailto: someone@example.com" class="cta" ><button>mail</button></a>
+      </header>
+      
+
+    <div id="tagline">Here Your's Mail</div>
+    <div  class="container">
+
+        <% mail.forEach(function(string){ %>
+            <% if(string=== ''){ %>
+                <div class="space"> </div>
+            <% } else {%>  
+            <div class="content"><%= string %> </div>
+        <% } %> 
+         <% }) %> 
+         
+         <div id="copy-button" ><button onclick="copyText()">Copy</button></div>
+    
+            </div>
+
+            <input id="hidden" type="hidden" value="<%=mail%>" >
+</body>
+<script src="javascript/mail.js"></script>
+</html>
+
+
