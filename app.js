@@ -75,7 +75,7 @@ app.get('/mail',(req, res) => {
     res.render('mailgenerator');
 })
 
-app.get('/contactform',(req, res) => {
+app.post('/contactform',(req, res) => {
   res.redirect('/');
 })
 
