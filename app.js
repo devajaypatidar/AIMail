@@ -75,9 +75,7 @@ app.get('/mail',(req, res) => {
     res.render('mailgenerator');
 })
 
-app.post('/contactform',(req, res) => {
-  res.redirect('/');
-})
+
 
 app.post('/mail',(req, res) => {
   const prompt = "write a mail to "+ req.body.mailTo+ " for "+ req.body.for;
@@ -201,11 +199,15 @@ app.get('/about', function (req, res) {
   res.render('about');
 })
 
-app.get("/newsletter", function (req, res) {
-    res.redirect('/');
+
+
+app.post('/contactform',function (req,res){
+  res.redirect('/');
 })
 
-
+app.post('/newsletter',function (req,res){
+  res.redirect('/');
+})
 
 let port = process.env.PORT || 80;
 
