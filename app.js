@@ -203,8 +203,9 @@ app.get("/newsletter", function (req, res) {
 
 
 
+let port = process.env.PORT || 80;
 
-app.listen('3000',function(){
-    console.log('listening on http://localhost:3000');
+app.listen(port,function(){
+  console.log("Server is Started succesfully");
 })
 
