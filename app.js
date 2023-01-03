@@ -34,8 +34,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-
-mongoose.connect("mongodb+srv://ajay:ajay@cluster0.nxhqf4f.mongodb.net/?retryWrites=true&w=majority", {
+mongoose.set("strictQuery", false);
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
