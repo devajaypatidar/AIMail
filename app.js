@@ -75,6 +75,10 @@ app.get('/mail',(req, res) => {
     res.render('mailgenerator');
 })
 
+app.get('/contactform',(req, res) => {
+  res.redirect('/');
+})
+
 app.post('/mail',(req, res) => {
   const prompt = "write a mail to "+ req.body.mailTo+ " for "+ req.body.for;
   (async () => {
