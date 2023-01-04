@@ -7,5 +7,8 @@ function copyText() {
     
     
     navigator.clipboard.writeText(value);
+
+    var copyButton = document.getElementById("copy-button");
+    copyButton.innerHTML = "Copied";
     
 }
