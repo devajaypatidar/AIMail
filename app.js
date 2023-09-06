@@ -92,7 +92,7 @@ app.post('/mail',(req, res) => {
             presence_penalty: 0,
           });
           const mail = response.data.choices[0].text.split(/\n/);
-          
+          console.log(response);
           res.render('mail',{mail: mail});
 
     }catch(error){
@@ -102,6 +102,8 @@ app.post('/mail',(req, res) => {
           } else {
             console.log(error.message);
           }
+
+          res.render('error')
     }
     
 })();
@@ -145,6 +147,7 @@ app.post('/howtoreply',(req, res) => {
               } else {
                 console.log(error.message);
               }
+              res.render('error')
         }
         
     })();
@@ -186,6 +189,7 @@ app.post('/login', (req, res) => {
   req.login(user, function (err) {
     if (err) {
       console.log(err);
+      res.redirect("/")
     } else {
       passport.authenticate("local")(req, res, function () {
         res.redirect("/");
